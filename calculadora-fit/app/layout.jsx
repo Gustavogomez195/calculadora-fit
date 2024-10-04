@@ -1,4 +1,6 @@
 import { AuthProvider } from "./components/context/AuthContext";
+import "./globals.css"
+import {poppins} from "./fonts/fonts"
 
 
 export const metadata = {
@@ -10,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className="antialiased"
+        className={`${poppins.className} antialiased `}
       >
         <AuthProvider>
 

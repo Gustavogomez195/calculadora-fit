@@ -1,4 +1,3 @@
-// components/Calculator/ResultadosGuardados.jsx
 "use client";
 
 import { useEffect, useState } from "react";
