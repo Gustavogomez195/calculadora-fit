@@ -1,11 +1,14 @@
-// components/Layout/Navbar.jsx
 "use client";
 
-import Link from "next/link";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../context/AuthContext";
 import { auth } from "../../lib/firebase";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image"
+import Button from "../ui/Button";
+
+
 
 const Navbar = () => {
   const { usuario } = useAuth();
@@ -21,35 +24,44 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <Link href="/">
-        <a className="logo">Calculadora HB</a>
+    <nav className="w-full flex items-center justify-between bg-black text-white px-12 py-4">
+      <div className="flex justify-center items-center gap-2">
+
+
+      <Image
+      src="/mancuernas.png" 
+      width={40}
+      height={40}/>
+      <Link href="/" className="text-2xl">
+        Calculadora HB
       </Link>
-      <ul>
+      
+      </div>
+      <ul className="flex gap-2 ">
         {usuario ? (
           <>
             <li>
-              <Link href="/dashboard">
-                <a>Dashboard</a>
-              </Link>
+              <Button href="/dashboard">
+                Dashboard
+              </Button>
             </li>
             <li>
-              <button onClick={manejarLogout} className="button">
+              <Button onClick={manejarLogout} >
                 Cerrar Sesión
-              </button>
+              </Button>
             </li>
           </>
         ) : (
           <>
             <li>
-              <Link href="/login">
-                <a>Iniciar Sesión</a>
-              </Link>
+              <Button href="/signup">
+                Registrarte
+              </Button>
             </li>
-            <li>
-              <Link href="/signup">
-                <a>Registrar</a>
-              </Link>
+            <li >
+              <Button href="/login" >
+                Iniciar Sesión 
+              </Button>
             </li>
           </>
         )}

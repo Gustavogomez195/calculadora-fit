@@ -1,9 +1,11 @@
-// app/page.jsx
 "use client";
 
 import { useAuth } from "./components/context/AuthContext"
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import Navbar from "./components/layout/NavBar";
+import Calculadora from "./components/calculadora/Calculadora";
+import Footer from "./components/layout/Footer";
 
 const Home = () => {
   const { usuario, cargando } = useAuth();
@@ -20,13 +22,24 @@ const Home = () => {
   }
 
   return (
-    <div className="w-full justify-center items-center ">
-      <h1 className="text-4xl font-bold text-cyan-50">Calculadora de Harris-Benedict</h1>
-      <p>
-        Calcula tus necesidades calóricas diarias y guarda tus resultados.{" "}
-        <a href="/signup" className="link">Regístrate</a> o <a href="/login" className="link">Inicia Sesión</a> para comenzar.
+    <>
+    <main className="w-full ">
+      <Navbar />
+      <div className="flex flex-col justify-center items-center py-20 gap-2">
+
+      <h1 className="text-5xl font-bold ">Calculadora de Harris-Benedict</h1>
+      <p className="text-lg">
+        Calcula tus necesidades calóricas diarias y guarda tus resultados.
+        
       </p>
-    </div>
+      
+      <Calculadora/>
+      </div>
+    </main>
+    <footer>
+      <Footer/>
+    </footer>
+    </>
   );
 };
 

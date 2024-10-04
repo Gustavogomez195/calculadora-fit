@@ -1,4 +1,3 @@
-// components/Calculator/HarrisBenedictCalculator.jsx
 "use client";
 
 import { useState } from "react";
@@ -76,66 +75,70 @@ const Calculadora = () => {
   };
 
   return (
-    <div className="calculator">
-      <h2>Calculadora de Harris-Benedict</h2>
+    <div className="text-lg border-2 border-black rounded-lg p-8 font-bold ">
+      
       {error && <p className="error">{error}</p>}
-      <form onSubmit={manejarEnvio}>
-        <div>
-          <label>Sexo:</label>
-          <select name="sexo" value={form.sexo} onChange={manejarCambio} className="input">
+      <form onSubmit={manejarEnvio} className="space-y-5">
+        <div className="flex flex-col">
+          <label>Sexo</label>
+          <select name="sexo" value={form.sexo} onChange={manejarCambio} className="font-light outline-none  ">
             <option value="masculino">Masculino</option>
             <option value="femenino">Femenino</option>
           </select>
         </div>
-        <div>
-          <label>Peso (kg):</label>
+        <div className="flex flex-col">
+          <label>Peso (kg)</label>
           <input
             type="number"
             name="peso"
             value={form.peso}
             onChange={manejarCambio}
             required
-            className="input"
+            className="font-light outline-none border p-2 rounded"
+            placeholder="Introduce tu peso"
+            
           />
         </div>
-        <div>
-          <label>Altura (cm):</label>
+        <div className="flex flex-col">
+          <label>Altura (cm)</label>
           <input
             type="number"
             name="altura"
             value={form.altura}
             onChange={manejarCambio}
             required
-            className="input"
+            className="font-light outline-none border p-2 rounded"
+            placeholder="Introduce tu altura"
           />
         </div>
-        <div>
-          <label>Edad:</label>
+        <div className="flex flex-col">
+          <label >Edad</label>
           <input
             type="number"
             name="edad"
             value={form.edad}
             onChange={manejarCambio}
             required
-            className="input"
+            className="font-light outline-none border p-2 rounded"
+            placeholder="Introduce tu edad"
           />
         </div>
-        <div>
+        <div className="flex flex-col">
           <label>Nivel de Actividad:</label>
-          <select name="actividad" value={form.actividad} onChange={manejarCambio} className="input">
+          <select name="actividad" value={form.actividad}  onChange={manejarCambio} className="font-light outline-none border p-2 rounded">
             <option value="sedentario">Sedentario (poco o ningún ejercicio)</option>
             <option value="ligero">Ligero (ejercicio ligero 1-3 días/semana)</option>
             <option value="moderado">Moderado (ejercicio moderado 3-5 días/semana)</option>
             <option value="activo">Activo (ejercicio fuerte 6-7 días/semana)</option>
             <option value="muy_activo">Muy Activo (ejercicio muy fuerte diario)</option>
           </select>
-        </div>
-        <button type="submit" className="button">
+        </div >
+        <button type="submit" className="w-full border bg-black rounded-lg text-white p-2 hover:bg-[#252525] transition-all duration-200">
           Calcular
         </button>
       </form>
       {resultado && (
-        <div className="resultado">
+        <div >
           <h3>Calorías Diarias Necesarias: {resultado} kcal</h3>
         </div>
       )}
