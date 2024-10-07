@@ -1,12 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { db } from "../../lib/firebase";
-import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { useAuth } from "../context/AuthContext";
 
 const Calculadora = () => {
-  const { usuario } = useAuth();
+
   const [form, setForm] = useState({
     sexo: "masculino",
     peso: "",
@@ -61,17 +58,7 @@ const Calculadora = () => {
     setResultado(calorias);
 
     // Guardar en Firestore
-    try {
-      await addDoc(collection(db, "resultados"), {
-        uid: usuario.uid,
-        calorias,
-        fecha: Timestamp.fromDate(new Date()),
-      });
-      setError("");
-    } catch (err) {
-      setError("Error al guardar los resultados.");
-      console.error(err);
-    }
+   
   };
 
   return (

@@ -1,4 +1,3 @@
-import { AuthProvider } from "./components/context/AuthContext";
 import "./globals.css"
 import {poppins} from "./fonts/fonts"
 
@@ -14,10 +13,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} antialiased `}
       >
-        <AuthProvider>
 
         {children}
-        </AuthProvider>
         
       </body>
     </html>

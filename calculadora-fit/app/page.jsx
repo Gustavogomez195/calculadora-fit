@@ -1,25 +1,12 @@
 "use client";
 
-import { useAuth } from "./components/context/AuthContext"
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import Navbar from "./components/layout/NavBar";
 import Calculadora from "./components/calculadora/Calculadora";
 import Footer from "./components/layout/Footer";
 
 const Home = () => {
-  const { usuario, cargando } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!cargando && usuario) {
-      router.push("/dashboard");
-    }
-  }, [usuario, cargando, router]);
-
-  if (cargando) {
-    return <p>Cargando...</p>;
-  }
+ 
+  
 
   return (
     <>
