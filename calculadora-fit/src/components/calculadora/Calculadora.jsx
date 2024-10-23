@@ -222,33 +222,32 @@ const Calculadora = () => {
 
       {/* Resultados */}
       {resultado && (
-        <div className="mt-6 ">
-          <h3 className="text-xl font-semibold">Calorías Diarias Necesarias:</h3>
-          {form.objetivo === "mantener" && (
-            <p>Mantenimiento: {resultado.mantenimiento} kcal</p>
-          )}
+  <div className="mt-6">
+    <h3 className="text-xl font-semibold">Calorías Diarias Necesarias:</h3>
+    {form.objetivo === "mantener" && (
+      <p>Mantenimiento: {resultado.mantenimiento} kcal</p>
+    )}
+    {(form.objetivo === "aumentar" || form.objetivo === "bajar") && (
+      <ul className=" list-disc  lg:list-inside  ">
+        {form.objetivo === "aumentar" && resultado.aumentar && (
+          <>
+            <li>Aumento Lento: {resultado.aumentar.lento} kcal</li>
+            <li>Aumento Rápido: {resultado.aumentar.rapido} kcal</li>
+            <li>Aumento Muy Rápido: {resultado.aumentar.muy_rapido} kcal</li>
+          </>
+        )}
+        {form.objetivo === "bajar" && resultado.bajar && (
+          <>
+            <li>Pérdida Lenta: {resultado.bajar.lento} kcal</li>
+            <li>Pérdida Rápida: {resultado.bajar.rapido} kcal</li>
+            <li>Pérdida Muy Rápida: {resultado.bajar.muy_rapido} kcal</li>
+          </>
+        )}
+      </ul>
+    )}
+  </div>
+)}
 
-          {(form.objetivo === "aumentar" || form.objetivo === "bajar") && (
-            <ul className=" list-disc  lg:list-inside  ">
-              {form.objetivo === "aumentar" && resultado.aumentar && (
-                <>
-                  <li>Aumento Lento: {resultado.aumentar.lento} kcal</li>
-                  <li>Aumento Rápido: {resultado.aumentar.rapido} kcal</li>
-                  <li>Aumento Muy Rápido: {resultado.aumentar.muy_rapido} kcal</li>
-                </>
-              )}
-              {form.objetivo === "bajar" && resultado.bajar && (
-                <>
-                  <li>Pérdida Lenta: {resultado.bajar.lento} kcal</li>
-                  <li>Pérdida Rápida: {resultado.bajar.rapido} kcal</li>
-                  <li>Pérdida Muy Rápida: {resultado.bajar.muy_rapido} kcal</li>
-                </>
-              )}
-            <Resultado/>
-            </ul>
-          )}
-        </div>
-      )}
     </div>
   );
 };
