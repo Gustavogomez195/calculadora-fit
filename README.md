@@ -25,11 +25,12 @@ Los usuarios deben poder:
 - ![Captura de pantalla 1]
 - <img width="998" alt="Captura de pantalla 2024-10-23 145235" src="https://github.com/user-attachments/assets/09eee680-16f8-4150-96c8-0f4cafc51e43">
 - ![Captura de pantalla 2]
-- <img width="946" alt="Captura de pantalla 2024-10-23 145423" src="https://github.com/user-attachments/assets/67ae79b5-79cb-4af6-9b94-28196fa6888c">
+- <img width="935" alt="Captura de pantalla 2024-10-23 164555" src="https://github.com/user-attachments/assets/f5f6bc48-797b-4baa-b842-bbc40a184725">
+
 
 ## Enlaces
 - **URL de la solución:** [Repositorio en GitHub](https://github.com/Gustavogomez195/calculadora-fit)
-- **Sitio en vivo:** [Carrito en Vercel](https://carrito-orcin.vercel.app/)
+- **Sitio en vivo:** [Calculadora](https://calculadora-lrvejmew6-gustavogomez195s-projects.vercel.app/)
 
 ### Construido con:
 - React
