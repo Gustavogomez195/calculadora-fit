@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Resultado from "../calculadora/Resultado";
 
 const Calculadora = () => {
   const [form, setForm] = useState({
@@ -63,10 +62,11 @@ const Calculadora = () => {
     const { peso, altura, edad, objetivo } = form;
 
     // Validaciones 
-    if (!peso || !altura || !edad) {
-      setError("Por favor, completa todos los campos.");
+    if (!peso || !altura || !edad || peso <= 0 || altura <= 0 || edad <= 0) {
+      setError("Por favor, introduce valores válidos en todos los campos.");
       return;
     }
+    
 
     setError("");
 
@@ -245,9 +245,8 @@ const Calculadora = () => {
         )}
       </ul>
     )}
-  </div>
-)}
-
+        </div>
+      )}
     </div>
   );
 };

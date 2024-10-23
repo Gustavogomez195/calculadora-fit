@@ -37,7 +37,7 @@ const Resultado = () => {
   }
 
   return (
-    <div className=" text-lg pt-12 font-bold">
+    <div className=" text-lg pt-12 font-bold w-[90%] lg:w-[70%]">
       <h2 className="text-2xl font-bold mb-4">Mis Resultados Guardados</h2>
       {resultados.length === 0 ? (
         <p>No tienes resultados guardados.</p>

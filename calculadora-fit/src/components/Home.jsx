@@ -1,6 +1,7 @@
 import Navbar from "./layout/NavBar"
 import Footer from "./layout/Footer"
 import Calculadora from "./calculadora/Calculadora"
+import Resultado from "./calculadora/Resultado"
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       Calcula tus necesidades calóricas diarias y guarda tus resultados.
     </p>
       <Calculadora/>
+      <Resultado/>
     </div>
     <Footer/>
 </div>
